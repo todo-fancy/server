@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-mongooese.connect('mongodb://todo-fancy:todo-fancy123@ds151382.mlab.com:51382/todo-fancy');
+mongoose.connect('mongodb://todo-fancy:todo-fancy123@ds151382.mlab.com:51382/todo-fancy');
 // mongoose.connect('mongodb://localhost:27017/todo-fancy', {useNewUrlParser: true});
 const db = mongoose.connection;
 
