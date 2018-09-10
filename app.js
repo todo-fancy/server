@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/todo-fancy', {useNewUrlParser: true});
+mongooese.connect('mongodb://todo-fancy:t0d0User@ds151382.mlab.com:51382/todo-fancy');
+// mongoose.connect('mongodb://localhost:27017/todo-fancy', {useNewUrlParser: true});
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -18,4 +19,5 @@ app.use(express.json());
 app.use('/todos', todoRoutes);
 app.use('/users', userRoutes);
 
-app.listen(3000, () => console.log('Connected to server...'));
+app.listen(process.env.PORT || '3000');
+// app.listen(3000, () => console.log('Connected to server...'));
