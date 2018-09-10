@@ -116,12 +116,10 @@ module.exports = {
 
   googleSignIn: (req, res) => {
     let input = {
-      email: req.body.email,
+      email: req.headers.email,
       password: crypt('123'),
       loginType: 'google'
     }
-
-    console.log(input.email, '<================= GOOGE MAIL');
 
     User.findOne({email: input.email})
     .then(user => {
